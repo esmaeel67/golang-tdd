@@ -48,3 +48,6 @@ go test -parallel 8 ./...        # Run with 8 parallel workers
 # Combined examples
 go test -v -race -cover ./...    # Verbose + race + coverage
 go test -v -run TestAuth -count=3 ./... # Specific test, 3 times
+
+# run app with these params
+go run main.go -expression "2 + 3"
