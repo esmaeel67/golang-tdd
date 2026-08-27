@@ -36,6 +36,7 @@ go test -cover ./...             # Coverage report
 go test -run TestLogin ./...     # Run tests matching "TestLogin"
 go test -run "TestUser|TestAuth" # Run multiple test patterns
 go test -bench=. ./...           # Run benchmarks
+go test -v ./input/parse_test.go # Run specific test file
 
 # Advanced scenarios
 go test -race ./...              # Check for race conditions
