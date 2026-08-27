@@ -36,6 +36,7 @@ go test -cover ./...             # Coverage report
 go test -run TestLogin ./...     # Run tests matching "TestLogin"
 go test -run "TestUser|TestAuth" # Run multiple test patterns
 go test -bench=. ./...           # Run benchmarks
+go test -v ./input/parse_test.go # Run specific test file
 
 # Advanced scenarios
 go test -race ./...              # Check for race conditions
@@ -47,3 +48,6 @@ go test -parallel 8 ./...        # Run with 8 parallel workers
 # Combined examples
 go test -v -race -cover ./...    # Verbose + race + coverage
 go test -v -run TestAuth -count=3 ./... # Specific test, 3 times
+
+# run app with these params
+go run main.go -expression "2 + 3"

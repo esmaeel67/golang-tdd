@@ -11,12 +11,21 @@ import (
 
 const expressionLength = 3
 
-type Parser struct {
-	engine    *calculator.Engine
-	validator *Validator
+// OperationProcessor is the interface for processing mathematical operations
+type OperationProcessor interface {
+	ProcessOperation(operation calculator.Operation) (*string, error)
 }
 
-func NewParser(op *calculator.Engine, v *Validator) *Parser {
+// ValidationHelper is the interface for input validation
+type ValidationHelper interface {
+	CheckInput(operator string, operands []float64) error
+}
+type Parser struct {
+	engine    OperationProcessor
+	validator ValidationHelper
+}
+
+func NewParser(op OperationProcessor, v ValidationHelper) *Parser {
 	return &Parser{
 		engine:    op,
 		validator: v,
