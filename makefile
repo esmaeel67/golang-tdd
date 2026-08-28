@@ -1,3 +1,5 @@
+BOOK_SWAP_PORT ?= 9090  # Sets default port to 9090 if not set elsewhere
+
 test:
 	go test -v ./...
 help:
@@ -7,3 +9,5 @@ help:
 	@echo "  run    - Run the application"
 	@echo "  clean  - Remove artifacts"
 	@echo "  help   - Show this help"
+serve:
+	BOOK_SWAP_PORT=$(BOOK_SWAP_PORT) go run ./cmd/main.go
