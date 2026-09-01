@@ -1,7 +1,7 @@
 BOOK_SWAP_PORT ?= 9090  # Sets default port to 9090 if not set elsewhere
 
 test:
-	go test -v ./...
+	LONG=true go test -v ./...
 help:
 	@echo "Available targets:"
 	@echo "  build  - Build the application"
