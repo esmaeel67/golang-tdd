@@ -75,7 +75,7 @@ func TestGetUser(t *testing.T) {
 	})
 }
 
-func TestUpsert(t *testing.T) {
+func TestUpsertUser(t *testing.T) {
 	bs := mocks.NewBookOperationsService(t)
 	us := db.NewUserService([]db.User{}, bs)
 	newUser := db.User{
