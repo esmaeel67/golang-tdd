@@ -2,7 +2,6 @@ package db_test
 
 import (
 	"errors"
-	"fmt"
 	"testing"
 
 	"github.com/esmaeel67/golang-tdd.git/db"
@@ -117,7 +116,6 @@ func TestListBooksByUser(t *testing.T) {
 		Status:  db.Available.String(),
 		OwnerID: uuid.NewString(),
 	}
-	fmt.Printf("%v \n", eb)
 	t.Run("existing book", func(t *testing.T) {
 		bs := db.NewBookService([]db.Book{eb}, nil)
 		books := bs.ListByUser(eb.OwnerID)
